@@ -5,4 +5,14 @@ OpsAnalytics.Api/bin/Debug/net8.0/OpsAnalytics.Api.dll
 OpsAnalytics.Api/bin/Debug/net8.0/OpsAnalytics.Api.pdb
 OpsAnalytics.Api/bin/Debug/net8.0/OpsAnalytics.Infrastructure.dll
 OpsAnalytics.Api/obj/Debug/net8.0/OpsAnalytics.Api.csproj.FileListAbsolute.txt
+OpsAnalytics.Domain/obj/
 OpsAnalytics.Domain/obj/Debug/net8.0/OpsAnalytics.Domain.AssemblyInfo.cs
+OpsAnalytics.Infrastructure/obj/
+OpsAnalytics.Infrastructure/obj/Debug/net8.0/OpsAnalytics.Infrastructure.pdb
+OpsAnalytics.Infrastructure/obj/Debug/net8.0/OpsAnalytics.Infrastructure.AssemblyInfoInputs.cache
+OpsAnalytics.Infrastructure/obj/Debug/net8.0/OpsAnalytics.Infrastructure.AssemblyInfo.cs
+OpsAnalytics.Infrastructure/obj/Debug/net8.0/OpsAnalytics.Infrastructure.AssemblyInfo.cs
+bin/
+obj/
+*.dll
+*.pdb
