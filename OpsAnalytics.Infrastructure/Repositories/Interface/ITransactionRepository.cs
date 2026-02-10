@@ -4,8 +4,8 @@ namespace OpsAnalytics.Infrastructure.Repositories.Interface;
 
 public interface ITransactionRepository
 {
-    Task<List<Transaction>> GetAllAsync();
-    Task<Transaction?> GetByIdAsync(Guid Id);
-    Task AddAsync(Transaction transaction);
+    Task<List<TransactionModel>> GetAllAsync();
+    Task<TransactionModel?> GetByIdAsync(Guid Id);
+    Task AddAsync(TransactionModel transaction);
     Task SaveChangesAsync();
 }

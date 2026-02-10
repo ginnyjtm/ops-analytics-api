@@ -1,0 +1,8 @@
+OpsAnalytics.Api/bin/
+OpsAnalytics.Api/bin/Debug/net8.0/OpsAnalytics.Domain.dll
+OpsAnalytics.Api/obj/
+OpsAnalytics.Api/bin/Debug/net8.0/OpsAnalytics.Api.dll
+OpsAnalytics.Api/bin/Debug/net8.0/OpsAnalytics.Api.pdb
+OpsAnalytics.Api/bin/Debug/net8.0/OpsAnalytics.Infrastructure.dll
+OpsAnalytics.Api/obj/Debug/net8.0/OpsAnalytics.Api.csproj.FileListAbsolute.txt
+OpsAnalytics.Domain/obj/Debug/net8.0/OpsAnalytics.Domain.AssemblyInfo.cs

@@ -11,17 +11,17 @@ public class TransactionService : ITransactionService
         _repository = repository;
     }
 
-    public async Task<List<Transaction>> GetAllTransactionAsync()
+    public async Task<List<TransactionModel>> GetAllTransactionAsync()
     {
         return await _repository.GetAllAsync();
     }
 
-    public async Task<Transaction?> GetTransactionAsync(Guid id)
+    public async Task<TransactionModel?> GetTransactionAsync(Guid id)
     {
         return await _repository.GetByIdAsync(id);
     }
-    
-    public async Task CreateTransactionAsync(Transaction transaction)
+
+    public async Task CreateTransactionAsync(TransactionModel transaction)
     {
         await _repository.AddAsync(transaction);
         await _repository.SaveChangesAsync();

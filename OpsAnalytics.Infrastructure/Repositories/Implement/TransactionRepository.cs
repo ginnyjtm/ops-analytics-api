@@ -1,10 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using OpsAnalytics.Domain.Entities;
-using OpsAnalytics.Infrastructure.Data;
 using OpsAnalytics.Infrastructure.Data.Models;
 using OpsAnalytics.Infrastructure.Repositories.Interface;
-using DomainTransaction = OpsAnalytics.Domain.Entities.Transaction;
-using EfTransaction = OpsAnalytics.Infrastructure.Data.Models.Transaction;
+using OpsAnalytics.Domain.Entities;
 
 namespace OpsAnalytics.Infrastructure.Repositories.Implement;
 
@@ -17,9 +14,9 @@ public class TransactionRepository : ITransactionRepository
     }
 
 
-    public async Task<List<DomainTransaction>> GetAllAsync()
+    public async Task<List<TransactionModel>> GetAllAsync()
     {
-        return await _context.Transactions.Select(e => new DomainTransaction
+        return await _context.Transactions.Select(e => new TransactionModel
         {
             Id = e.Id,
             Amount = e.Amount,
@@ -27,12 +24,12 @@ public class TransactionRepository : ITransactionRepository
         }).ToListAsync();
     }
 
-    public async Task<DomainTransaction?> GetByIdAsync(Guid id)
+    public async Task<TransactionModel?> GetByIdAsync(Guid id)
     {
         var transaction = await _context.Transactions.FindAsync(id);
         if (transaction == null) return null;
 
-        return new DomainTransaction
+        return new TransactionModel
         {
             Id = transaction.Id,
             Amount = transaction.Amount,
@@ -40,9 +37,9 @@ public class TransactionRepository : ITransactionRepository
         };
     }
 
-    public async Task AddAsync(DomainTransaction transaction)
+    public async Task AddAsync(TransactionModel transaction)
     {
-        var entity = new EfTransaction
+        var entity = new Transaction
         {
             Id = transaction.Id,
             Amount = transaction.Amount,
@@ -52,7 +49,7 @@ public class TransactionRepository : ITransactionRepository
         _context.Transactions.Add(entity);
         await _context.SaveChangesAsync();
     }
-    
+
     public async Task SaveChangesAsync()
     {
         await _context.SaveChangesAsync();

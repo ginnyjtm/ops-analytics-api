@@ -4,7 +4,7 @@ namespace OpsAnalytics.Infrastructure.Services.Interface;
 
 public interface ITransactionService
 {
-    Task<List<Transaction>> GetAllTransactionAsync();
-    Task<Transaction?> GetTransactionAsync(Guid id);
-    Task CreateTransactionAsync(Transaction transaction);
+    Task<List<TransactionModel>> GetAllTransactionAsync();
+    Task<TransactionModel?> GetTransactionAsync(Guid id);
+    Task CreateTransactionAsync(TransactionModel transaction);
 }
