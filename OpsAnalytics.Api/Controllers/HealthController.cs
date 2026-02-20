@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.SignalR;
 
 namespace OpsAnalytics.Api.Controller;
 
@@ -20,11 +19,33 @@ public class HealthController : ControllerBase
         {
             using var conn = new Npgsql.NpgsqlConnection("Host=localhost;Port=5433;Database=opsanalytics;Username=ops;Password=ops");
             conn.Open();
-            return Ok("✅ DB connection works!"); 
+            return Ok("✅ DB connection works!");
         }
         catch (Exception ex)
         {
             return BadRequest("❌ DB connection failed: " + ex.Message);
         }
     }
+
+    [HttpGet("equality")]
+    public IActionResult CheckEquality()
+    {
+        int a = 5;
+        int b = 5;
+
+        return Ok(new { eq = a.Equals(b) });
+    }
+
+    [HttpGet("hash/{a}")]
+    public IActionResult GetHash(int a)
+    {
+        Console.WriteLine($"Received value: {a}");
+
+        var h = new { hash = a.GetHashCode() };
+
+        Console.WriteLine($"Computed hash: {h.hash}");
+        return Ok(h);
+    }
+
+
 }
